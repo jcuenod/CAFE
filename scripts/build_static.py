@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# This script is only slightly adapted from the original version by James Tauber:
+# https://github.com/jtauber/apostolic-fathers/blob/master/scripts/build_static.py
 
 from roman_numerals import convert_to_numeral
 
@@ -58,7 +60,7 @@ for WORK in WORK_LIST:
     </head>
     <body>
       <div class="container">
-      <nav>&#x2191; <a href="./">Open Apostolic Fathers</a></nav>
+      <nav>&#x2191; <a href="./">Contemporary Apostolic Fathers Edition</a></nav>
       <h1 lang="en">{TITLE}</h1>
     """
 
