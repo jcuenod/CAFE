@@ -24,7 +24,7 @@ This repository includes the following texts:
 
 ## Translation Approach
 
-Our translations aim to be clear, natural, and accurate. The first drafts were generated using large language models. As a sanity check I have run semantic similarity tests across the translations and the original texts (LaBSE). The 15 most dissimilar lines did not warrant any particular attention, which is a promising sign. Apart from the challenge of LLMs being unreliable, though, translation is as much an art as it is a science. There are bound to be errors and areas worth improving in these translations, but having a starting point to build upon is a valuable first step.
+Our translations aim to be clear, natural, and accurate. After many trials with a variety of models (I have experimented with Claude, Mixtral, Llama3, and Gemini), these first drafts were generated using GPT-4o. As a sanity check I have run semantic similarity tests across the translations and the original texts (LaBSE). The 15 most dissimilar lines did not warrant any particular attention, which is a promising sign. Apart from the challenge of LLMs being unreliable, though, translation is as much an art as it is a science. There are bound to be errors and areas worth improving in these translations, but having a starting point to build upon is a valuable first step and already makes these texts more accessible.
 
 ## Usage
 
