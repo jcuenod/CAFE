@@ -33,7 +33,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install Dependencies
-        run: pip install roman_numeral
+        run: pip install roman_numerals
       - name: Build
         run: python scripts/build_static.py
       - name: Setup Pages
