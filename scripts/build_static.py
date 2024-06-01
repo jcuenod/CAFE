@@ -4,6 +4,11 @@
 
 from roman_numerals import convert_to_numeral
 
+DIST_FOLDER = "dist"
+STATIC_FOLDER = "static"
+
+import os
+os.makedirs(DIST_FOLDER, exist_ok=True)
 
 WORK_LIST = [
     "001-i_clement",
@@ -45,7 +50,7 @@ TITLES = {
 for WORK in WORK_LIST:
     print(WORK)
     SRC = f"./{WORK}.en.txt"
-    DEST = f"./docs/{WORK}.html"
+    DEST = f"./{DIST_FOLDER}/{WORK}.html"
 
     TITLE = TITLES[WORK[:3]]
 
@@ -122,3 +127,10 @@ for WORK in WORK_LIST:
             if section is not None:
                 print("""    </div>""", file=g)
             print(FOOTER, file=g)
+
+# copy the contents of static/ into dist/
+from glob import glob
+import shutil
+
+for filename in glob(f"{STATIC_FOLDER}/*"):
+    shutil.copy(filename, f"{DIST_FOLDER}/")
