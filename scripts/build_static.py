@@ -46,6 +46,8 @@ TITLES = {
     "015": "The Epistle to Diognetus",
 }
 
+def to_vref(section, chapter, verse):
+    return f"{section}.{chapter}.{verse}" if section else f"{chapter}.{verse}"
 
 for WORK in WORK_LIST:
     print(WORK)
@@ -112,7 +114,7 @@ for WORK in WORK_LIST:
                             print("""    <div class="epilogue">""", file=g)
                         else:
                             print("""    <div class="chapter">""", file=g)
-                            print(f"""      <h3 class="chapter_ref">{convert_to_numeral(int(chapter))}</h3>""", file=g)
+                            print(f"""      <h3 class="chapter_ref" id="ch{int(chapter)}">{convert_to_numeral(int(chapter))}</h3>""", file=g)
                     prev_chapter = chapter
                 if chapter == "0" and verse == "0":
                     print(f"""    <h2 class="section_title">{parts[1]}</h2>""", file=g)
@@ -121,7 +123,7 @@ for WORK in WORK_LIST:
                         print(f"""<h3 class="epilogue_title">{parts[1]}</h3>""", file=g)
                     else:
                         if verse != "1":
-                            print(f"""      <span class="verse_ref">{verse}</span>""", end="&nbsp;", file=g)
+                            print(f"""      <span class="verse_ref" id="{to_vref(section,chapter,verse)}">{verse}</span>""", end="&nbsp;", file=g)
                         print(parts[1], file=g)
             print("""    </div>""", file=g)
             if section is not None:
